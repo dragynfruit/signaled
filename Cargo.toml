@@ -1,0 +1,23 @@
+[package]
+name = "signaled"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+futures-util = "0.3.31"
+reqwest = { version = "0.12.12", features = ["stream"] }
+rodio = { version = "0.20.1", features = ["symphonia-aac"] }
+tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }
+log = "0.4"
+crossterm = "0.28.1"
+ratatui = "0.29.0"
+tui-logger = "0.16.0"
+rustfft = "6.2.0"
+argh = "0.1.13"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+debug = false
