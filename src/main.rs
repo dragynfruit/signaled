@@ -56,7 +56,7 @@ impl LogFormatter for CustomFormatter {
         4
     }
     fn format(&self, _width: usize, evt: &ExtLogRecord) -> Vec<Line> {
-        vec![Line::from(format!("{}: {}", evt.level, evt.msg))]
+        vec![Line::from(format!("{}: {}", evt.level, evt.msg()))]
     }
 }
 
